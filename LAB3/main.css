@@ -1,0 +1,363 @@
+  .index-page {
+      display: block;
+      margin: 0;
+  }
+
+  .index-page .index-shell,
+  .index-page .index-shell * {
+      box-sizing: border-box;
+  }
+
+  .index-page .index-shell {
+      width: 100%;
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 16px 12px 24px;
+  }
+
+  .index-page .hero-viewport {
+      width: 100%;
+      overflow: hidden;
+      border: 2px solid black;
+      margin-bottom: 14px;
+  }
+
+  .index-page .hero-title {
+      width: 100%;
+      margin: 0;
+      padding: 20px 14px;
+      font-size: clamp(28px, 4vw, 40px);
+      text-align: left;
+      white-space: nowrap;
+      animation-name: slide-title-left;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+  }
+
+  @keyframes slide-title-left {
+      from {
+          transform: translateX(100%);
+      }
+      to {
+          transform: translateX(0);
+      }
+  }
+
+  .index-page .index-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      padding: 12px;
+      border: 2px solid black;
+      margin-bottom: 14px;
+  }
+
+  .index-page .index-nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+  }
+
+  .index-page .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+  }
+
+  .index-page .content-row {
+      display: flex;
+      gap: 14px;
+      align-items: stretch;
+  }
+
+  .index-page .movie-section {
+      display: flex;
+      flex-direction: column;
+      flex: 2;
+      min-width: 0;
+      border: 2px solid black;
+      padding: 12px;
+  }
+
+  .index-page .about-section {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 0;
+      border: 2px solid black;
+      padding: 12px;
+  }
+
+  .index-page .about-section p {
+      margin: 0;
+      column-count: 1;
+      column-gap: 20px;
+      column-rule: none;
+  }
+
+  .index-page .movie-section hr,
+  .index-page .about-section hr {
+      width: 100%;
+      margin: 8px 0 12px;
+  }
+
+  .index-page .movie-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+  }
+
+  .index-page .movie-card {
+      min-width: 0;
+      flex: 0 0 calc((100% - 36px) / 4);
+  }
+
+  .index-page .poster-wrap {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 150%;
+      overflow: hidden;
+      border: 1px solid #999;
+  }
+
+  .index-page .poster-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      transition: transform 2s;
+  }
+
+  .index-page .poster-wrap:hover .poster-image {
+      transform: scale(1.5);
+  }
+
+  .index-page .poster-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.65);
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.25s;
+  }
+
+  .index-page .poster-wrap:hover .poster-caption {
+      opacity: 1;
+  }
+
+  /* 801px 이상 */
+  @media (min-width: 801px) {
+      .index-page .index-nav {
+          flex-direction: row;
+      }
+
+      .index-page .content-row {
+          flex-direction: column; /* movie 위, about 아래 */
+      }
+
+      .index-page .movie-grid {
+          display: flex;
+          flex-wrap: wrap;
+      }
+
+      .index-page .movie-section,
+      .index-page .about-section {
+          width: 100%;
+          flex: 0 0 auto;
+      }
+
+      .index-page .about-section p {
+          column-count: 2;
+          column-rule: 1px solid #666;
+      }
+  }
+
+  /* 481px ~ 800px */
+  @media (min-width: 481px) and (max-width: 800px) {
+      .index-page .index-nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-around;
+      }
+      .index-page .content-row {
+          flex-direction: column;
+      }
+      .index-page .movie-grid {
+          display: flex;
+          flex-wrap: wrap;
+      }
+      .index-page .movie-card {
+          flex: 0 0 calc((100% - 12px) / 2);
+      }
+  }
+
+  /* 480px 이하 */
+  @media (max-width: 480px) {
+      .index-page .hero-title {
+          font-size: 24px;
+          padding: 14px 10px;
+      }
+      .index-page .index-nav {
+          flex-direction: column;
+          gap: 8px;
+      }
+      .index-page .index-nav a {
+          width: 100%;
+          text-align: center;
+          border: 1px solid #999;
+          padding: 8px 0;
+      }
+      .index-page .content-row {
+          flex-direction: column;
+      }
+      .index-page .movie-grid {
+          display: flex;
+          flex-wrap: wrap;
+      }
+      .index-page .movie-card {
+          min-width: 0;
+          flex: 0 0 100%;
+      }
+  }
+
+/* login.html / signup.html style (LAB2 match) */
+body:not(.index-page) {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+body:not(.index-page) h1 {
+    text-align: center;
+    font-size: 40px;
+    margin: 100px 50px 0;
+    padding: 25px;
+}
+
+body:not(.index-page) h2 {
+    text-align: center;
+}
+
+body:not(.index-page) nav {
+    font-size: 20px;
+    text-align: center;
+    margin: 15px 50px;
+    padding: 15px 20px;
+}
+
+body:not(.index-page) .top {
+    display: flex;
+    justify-content: center;
+}
+
+body:not(.index-page) .form_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    margin: 0;
+    padding: 25px 0;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+}
+
+body:not(.index-page) > .form_box {
+    align-self: center;
+}
+
+body:not(.index-page) .form_box form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: 0 70px;
+}
+
+body:not(.index-page) .form_data {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+body:not(.index-page) .form_data > label {
+    flex: 0 0 120px;
+    margin: 0 10px 0 0;
+    padding: 5px 0;
+    width: 120px;
+    text-align: left;
+}
+
+body:not(.index-page) .form_data > input,
+body:not(.index-page) .form_data > select {
+    flex: 1;
+    padding: 5px 10px;
+    font-size: 20px;
+    margin: 0;
+}
+
+body:not(.index-page) .radio_group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+body:not(.index-page) .radio_group p {
+    margin: 0 20px 0 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+body:not(.index-page) .radio_group p:last-child {
+    margin-right: 0;
+}
+
+body:not(.index-page) .radio_group label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+body:not(.index-page) .radio_group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0 6px 0 0;
+}
+
+body:not(.index-page) .form_bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+body:not(.index-page) .form_bottom input {
+    width: 130px;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 25px 0;
+}
+
+body:not(.index-page) .form_bottom .submit_btn {
+    margin-right: 12px;
+}
+
+body:not(.index-page) .submit_btn {
+    background-color: lightgreen;
+}
+
+body:not(.index-page) .cancel_btn {
+    background-color: orange;
+    color: white;
+}
