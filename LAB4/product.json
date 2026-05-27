@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "title": "Toy Story",
+    "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
+    "release_date": "1995-10-30",
+    "rating": 7.7,
+    "poster": "images/Toy_Story.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Jumanji",
+    "overview": "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.",
+    "release_date": "1995-12-15",
+    "rating": 6.9,
+    "poster": "images/Jumanji.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "overview": "Interstellar chronicles the adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+    "release_date": "2014-11-05",
+    "rating": 8.1,
+    "poster": "images/Interstellar.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Imitation Game",
+    "overview": "Based on the real life story of legendary cryptanalyst Alan Turing, the film portrays the nail-biting race against time by Turing and his brilliant team of code-breakers at Britain's top-secret Government Code and Cypher School at Bletchley Park, during the darkest days of World War II.",
+    "release_date": "2014-11-14",
+    "rating": 8.0,
+    "poster": "images/The_Imitation_Game.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Harry Potter and the Philosopher's Stone",
+    "overview": "Harry Potter has lived under the stairs at his aunt and uncle's house his whole life. But on his 11th birthday, he learns he's a powerful wizard -- with a place waiting for him at the Hogwarts School of Witchcraft and Wizardry. As he learns to harness his newfound powers with the help of the school's kindly headmaster, Harry uncovers the truth about his parents' deaths -- and about the villain who's to blame.",
+    "release_date": "2001-11-16",
+    "rating": 7.5,
+    "poster": "images/Harry_Potter_and_the_Philosopher_s_Stone.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Martian",
+    "overview": "During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive.",
+    "release_date": "2015-09-30",
+    "rating": 7.6,
+    "poster": "images/The_Martian.jpg"
+  },
+  {
+    "id": 7,
+    "title": "The Devil Wears Prada",
+    "overview": "The Devil Wears Prada is about a young journalist who moves to New York to work in the fashion industry. Her boss however is extremely demanding and cruel and won’t let her succeed if she doesn’t fit into the high class elegant look of their magazine when all she really wants to be a good journalist.",
+    "release_date": "2006-06-30",
+    "rating": 7.0,
+    "poster": "images/The_Devil_Wears_Prada.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Titanic",
+    "overview": "A story of the romances of two couples upon the doomed ship. Isabella Paradine (Catherine Zeta Jones) is a wealthy woman mourning the loss of her aunt, who reignites a romance with old flame, Wynn Park (Peter Gallagher). Meanwhile, a charming ne'er do well named Jamie Perse (Mike Doyle) steals a ticket for the ship, and falls for a sweet innocent Irish girl on board. But their romance is threatened by the villainous Simon Doonan (Tim Curry), who has discovered about the ticket and makes Jamie his unwilling accomplice, as well as having sinister plans for the girl.",
+    "release_date": "1996-11-17",
+    "rating": 6.3,
+    "poster": "images/Titanic.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Shawshank Redemption",
+    "overview": "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+    "release_date": "1994-09-23",
+    "rating": 8.5,
+    "poster": "images/The_Shawshank_Redemption.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Gravity",
+    "overview": "Dr. Ryan Stone, a brilliant medical engineer on her first Shuttle mission, with veteran astronaut Matt Kowalsky in command of his last flight before retiring. But on a seemingly routine spacewalk, disaster strikes. The Shuttle is destroyed, leaving Stone and Kowalsky completely alone-tethered to nothing but each other and spiraling out into the blackness of space. The deafening silence tells them they have lost any link to Earth and any chance for rescue. As fear turns to panic, every gulp of air eats away at what little oxygen is left. But the only way home may be to go further out into the terrifying expanse of space.",
+    "release_date": "2013-09-27",
+    "rating": 7.3,
+    "poster": "images/Gravity.jpg"
+  },
+  {
+    "id": 11,
+    "title": "The Terminator",
+    "overview": "In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?",
+    "release_date": "1984-10-26",
+    "rating": 7.4,
+    "poster": "images/The_Terminator.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Matrix",
+    "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+    "release_date": "1999-03-30",
+    "rating": 7.9,
+    "poster": "images/The_Matrix.jpg"
+  },
+  {
+    "id": 13,
+    "title": "The Truman Show",
+    "overview": "Truman Burbank is the star of \"The Truman Show\", a 24-hour-a-day \"reality\" TV show that broadcasts every aspect of his life -- live and in color -- without his knowledge. His entire life has been an unending soap opera for consumption by the rest of the world. And everyone he knows -- including his wife and his best friend -- is really an actor, paid to be part of his life.",
+    "release_date": "1998-06-04",
+    "rating": 7.8,
+    "poster": "images/The_Truman_Show.jpg"
+  },
+  {
+    "id": 14,
+    "title": "E.T. the Extra-Terrestrial",
+    "overview": "After a gentle alien becomes stranded on Earth, the being is discovered and befriended by a young boy named Elliott. Bringing the extraterrestrial into his suburban California house, Elliott introduces E.T., as the alien is dubbed, to his brother and his little sister, Gertie, and the children decide to keep its existence a secret. Soon, however, E.T. falls ill, resulting in government intervention and a dire situation for both Elliott and the alien.",
+    "release_date": "1982-04-03",
+    "rating": 7.3,
+    "poster": "images/E_T_the_Extra_Terrestrial.jpg"
+  },
+  {
+    "id": 15,
+    "title": "Contact",
+    "overview": "Contact is a science fiction film about an encounter with alien intelligence. Based on the novel by Carl Sagan the film starred Jodie Foster as the one chosen scientist who must make some difficult decisions between her beliefs, the truth, and reality.",
+    "release_date": "1997-07-11",
+    "rating": 7.2,
+    "poster": "images/Contact.jpg"
+  },
+  {
+    "id": 16,
+    "title": "Kill Bill: Vol. 1",
+    "overview": "An assassin is shot at the altar by her ruthless employer, Bill and other members of their assassination circle – but 'The Bride' lives to plot her vengeance. Setting out for some payback, she makes a death list and hunts down those who wronged her, saving Bill for last.",
+    "release_date": "2003-10-10",
+    "rating": 7.7,
+    "poster": "images/Kill_Bill_Vol_1.jpg"
+  },
+  {
+    "id": 17,
+    "title": "The Avengers",
+    "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+    "release_date": "2012-04-25",
+    "rating": 7.4,
+    "poster": "images/The_Avengers.jpg"
+  },
+  {
+    "id": 18,
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "overview": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+    "release_date": "2001-12-18",
+    "rating": 8.0,
+    "poster": "images/The_Lord_of_the_Rings_The_Fellowship_of_the_Ring.jpg"
+  },
+  {
+    "id": 19,
+    "title": "Inception",
+    "overview": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
+    "release_date": "2010-07-14",
+    "rating": 8.1,
+    "poster": "images/Inception.jpg"
+  },
+  {
+    "id": 20,
+    "title": "Jurassic Park",
+    "overview": "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. Before opening day, he invites a team of experts and his two eager grandchildren to experience the park and help calm anxious investors. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.",
+    "release_date": "1993-06-11",
+    "rating": 7.6,
+    "poster": "images/Jurassic_Park.jpg"
+  }
+]

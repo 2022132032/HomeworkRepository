@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SIGN UP PAGE</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <h1>Welcome to INTERNET-PROGRAMMING MOVIE SITE</h1>
+        <nav>
+            <a href="index.html">메인 페이지</a> | <a href="login.html">로그인</a> | <a href="signup.html">회원가입</a>
+        </nav>
+        <div class="top">
+            <div class="form_box">
+                <h2>SIGN UP</h2>
+                <form>
+                    <div class="form_data">
+                        <label>이름: </label><input name="name" type="text" size="25" placeholder="Enter Name" required autofocus>
+                    </div>
+                    <div class="form_data">
+                        <label>생일: </label><input name="birth" type="date" size="25" required>
+                    </div>
+                    <div class="form_data">
+                        <label>성별: </label>
+                        <div class="radio_group">
+                            <p><input name="gender" type="radio" value="남성">남성</p>
+                            <p><input name="gender" type="radio" value="여성">여성</p>
+                        </div>
+                    </div>
+                    <div class="form_data">
+                        <label>학년: </label><input name="grade" type="number" min="1" max="6" step="1">
+                    </div>
+                    <div class="form_data">
+                        <label>아이디: </label><input name="id" type="text" size="25" placeholder="Enter ID" required>
+                    </div>
+                    <div class="form_data">
+                        <label>비밀번호: </label><input name="pwd" type="password" size="25" placeholder="Enter Password" required>
+                    </div>
+                    <div class="form_data">
+                        <label>이메일: </label><input name="email" type="email" autocomplete="on" size="25">
+                    </div>
+                    <div class="form_data">
+                        <label for="security_q">보안 질문: </label>
+                        <select id="security_q" name="question">
+                            <option value="가장 좋아하는 영화는?">가장 좋아하는 영화는?</option>
+                            <option value="가장 좋아하는 노래는?">가장 좋아하는 노래는?</option>
+                            <option value="가장 좋아하는 과목은?">가장 좋아하는 과목은?</option>
+                            <option value="가장 좋아하는 과일은?">가장 좋아하는 과일은?</option>
+                        </select>
+                    </div>
+                    <div class="form_data">
+                        <label>답변: </label><input name="ans" type="text" size="25" required>
+                    </div>
+                    <div class="form_bottom">
+                        <input class="submit_btn" type="submit" value="SIGNUP">
+                        <input class="cancel_btn" type="reset" value="CANCEL">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

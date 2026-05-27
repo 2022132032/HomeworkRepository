@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LAB4 MAIN PAGE</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="index-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <h1>INTERNET-PROGRAMMING MOVIE SITE</h1>
+      </header>
+
+      <nav class="site-nav" aria-label="페이지 이동">
+        <a href="index.html">메인 페이지</a>
+        <a href="login.html">로그인</a>
+        <a href="signup.html">회원가입</a>
+      </nav>
+
+      <section class="controls" aria-label="검색 및 정렬">
+        <div class="control-item">
+          <label for="searchInput">키워드 검색</label>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="제목 또는 줄거리 키워드를 입력하세요"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="control-item">
+          <label for="sortSelect">정렬</label>
+          <select id="sortSelect">
+            <option value="release_desc">개봉일 최신순</option>
+            <option value="release_asc">개봉일 오래된순</option>
+            <option value="rating_desc">평점 높은순</option>
+            <option value="title_asc">제목 오름차순</option>
+          </select>
+        </div>
+      </section>
+
+      <p id="statusText" class="status-text">영화 정보를 불러오는 중...</p>
+
+      <main>
+        <section id="movieGrid" class="movie-grid" aria-live="polite"></section>
+      </main>
+
+      <div id="sentinel" class="sentinel">스크롤하여 더 보기</div>
+    </div>
+
+    <script>
+      (() => {
+        const searchInput = document.getElementById("searchInput");
+        const sortSelect = document.getElementById("sortSelect");
+        const movieGrid = document.getElementById("movieGrid");
+        const sentinel = document.getElementById("sentinel");
+        const statusText = document.getElementById("statusText");
+
+        const PAGE_SIZE = 6;
+        const FALLBACK_POSTER = "images/Toy_Story.jpg";
+
+        let allMovies = [];
+        let filteredMovies = [];
+        let renderedCount = 0;
+
+        function sortMovies(movies, sortType) {
+          const copied = [...movies];
+
+          copied.sort((a, b) => {
+            if (sortType === "release_desc") {
+              return b.release_date.localeCompare(a.release_date);
+            }
+            if (sortType === "release_asc") {
+              return a.release_date.localeCompare(b.release_date);
+            }
+            if (sortType === "rating_desc") {
+              return b.rating - a.rating;
+            }
+            if (sortType === "title_asc") {
+              return a.title.localeCompare(b.title);
+            }
+            return 0;
+          });
+
+          return copied;
+        }
+
+        function matchKeyword(movie, keyword) {
+          if (!keyword) {
+            return true;
+          }
+
+          const title = (movie.title || "").toLowerCase();
+          const overview = (movie.overview || "").toLowerCase();
+          return title.includes(keyword) || overview.includes(keyword);
+        }
+
+        function createMovieCard(movie) {
+          const card = document.createElement("article");
+          card.className = "movie-card";
+
+          const posterWrap = document.createElement("div");
+          posterWrap.className = "poster-wrap";
+
+          const poster = document.createElement("img");
+          poster.className = "poster-image";
+          poster.src = movie.poster;
+          poster.alt = `${movie.title} poster`;
+          poster.loading = "lazy";
+          poster.onerror = function () {
+            this.onerror = null;
+            this.src = FALLBACK_POSTER;
+          };
+
+          const overview = document.createElement("div");
+          overview.className = "overview-overlay";
+          overview.textContent = movie.overview;
+
+          posterWrap.appendChild(poster);
+          posterWrap.appendChild(overview);
+
+          const info = document.createElement("div");
+          info.className = "movie-info";
+          info.innerHTML = `
+            <h3>${movie.title}</h3>
+            <p><strong>개봉일:</strong> ${movie.release_date}</p>
+            <p><strong>평점:</strong> ${movie.rating.toFixed(1)}</p>
+          `;
+
+          card.appendChild(posterWrap);
+          card.appendChild(info);
+
+          return card;
+        }
+
+        function renderNextBatch() {
+          if (filteredMovies.length === 0) {
+            return;
+          }
+
+          if (renderedCount >= filteredMovies.length) {
+            sentinel.textContent = "모든 영화를 확인했습니다.";
+            return;
+          }
+
+          const nextMovies = filteredMovies.slice(renderedCount, renderedCount + PAGE_SIZE);
+          const fragment = document.createDocumentFragment();
+
+          nextMovies.forEach((movie) => {
+            fragment.appendChild(createMovieCard(movie));
+          });
+
+          movieGrid.appendChild(fragment);
+          renderedCount += nextMovies.length;
+
+          if (renderedCount >= filteredMovies.length) {
+            sentinel.textContent = "모든 영화를 확인했습니다.";
+          } else {
+            sentinel.textContent = `스크롤하여 더 보기 (${renderedCount}/${filteredMovies.length})`;
+          }
+        }
+
+        function applyFilterAndSort() {
+          const keyword = searchInput.value.trim().toLowerCase();
+          const sortType = sortSelect.value;
+
+          const matched = allMovies.filter((movie) => matchKeyword(movie, keyword));
+          filteredMovies = sortMovies(matched, sortType);
+
+          renderedCount = 0;
+          movieGrid.innerHTML = "";
+
+          statusText.textContent = `검색 결과: ${filteredMovies.length}개`;
+
+          if (filteredMovies.length === 0) {
+            sentinel.textContent = "조건에 맞는 영화가 없습니다.";
+            return;
+          }
+
+          renderNextBatch();
+        }
+
+        async function loadMovies() {
+          try {
+            const response = await fetch("product.json");
+            if (!response.ok) {
+              throw new Error("product.json fetch failed");
+            }
+
+            const data = await response.json();
+            allMovies = data.map((item) => ({
+              id: Number(item.id),
+              title: String(item.title || ""),
+              overview: String(item.overview || ""),
+              release_date: String(item.release_date || ""),
+              rating: Number(item.rating || 0),
+              poster: String(item.poster || FALLBACK_POSTER)
+            }));
+
+            applyFilterAndSort();
+          } catch (error) {
+            statusText.textContent = "영화 정보를 불러오지 못했습니다.";
+            sentinel.textContent = "오류가 발생했습니다.";
+          }
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const first = entries[0];
+            if (first.isIntersecting) {
+              renderNextBatch();
+            }
+          },
+          {
+            root: null,
+            rootMargin: "250px 0px",
+            threshold: 0
+          }
+        );
+
+        observer.observe(sentinel);
+
+        searchInput.addEventListener("input", applyFilterAndSort);
+        sortSelect.addEventListener("change", applyFilterAndSort);
+
+        loadMovies();
+      })();
+    </script>
+  </body>
+</html>
